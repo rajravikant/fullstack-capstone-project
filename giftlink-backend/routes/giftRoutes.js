@@ -2,15 +2,15 @@
 
 const express = require("express");
 const router = express.Router();
-const connectToDatabase = require("../models/db")
+const connectToDatabase = require("../models/db");
 
 
 
 router.get('/', async (req, res) => {
     try {
-        const db = await connectToDatabase()
-        const collection = db.collection("gifts")
-        const gifts = await collection.find({}).toArray()
+        const db = await connectToDatabase();
+        const collection = db.collection("gifts");
+        const gifts = await collection.find({}).toArray();
         res.json(gifts);
     } catch (e) {
         console.error('Error fetching gifts:', e);
