@@ -1,4 +1,5 @@
 /*jshint esversion: 8 */
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -41,7 +42,7 @@ app.use((err, req, res, next) => {
 
 app.get("/",(req,res)=>{
     res.send("Inside the server");
-})
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
